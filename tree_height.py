@@ -29,9 +29,10 @@ def main1():
     print(links(list))
       
 def main2():
-  q2="test/"+str(input())
-  if ("a" not in q2):
-    with open(q2) as t:
+  q2=str(input())
+  e="test/"+q2
+  if ("a" not in e):
+    with open(e) as t:
       data=t.readlines()
       data.pop(0)
       if(len(data)==1):
