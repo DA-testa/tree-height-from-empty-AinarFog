@@ -17,7 +17,7 @@ def left(n,l):
 def main():
   amount=int(input())
   nr=0
-  if (amount>0 and amount<106):
+  if (amount>0):
     list=[]
     for i in range(amount):
       n=int(input())
