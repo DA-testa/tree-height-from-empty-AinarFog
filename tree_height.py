@@ -28,4 +28,6 @@ def main():
       print(right(nr,list,amount))
     else:
       print(left(nr,list))
-main()
+q1=input()
+if(q1=="I"):
+  main()
