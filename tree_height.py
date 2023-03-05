@@ -1,14 +1,4 @@
 # python3
-import sys
-import threading
-def right(n,l,a):
-  ind=[-1]
-  for i in range(a):
-    if(i>n):
-      if (l[i] not in ind):
-        ind.append(l[i])
-  return (len(ind))
-
 def links(l):
   ind=[-1]
   hed=l.index('-1')
@@ -29,27 +19,13 @@ def rechts(l):
         ind.append(l[i])
   return(len(ind))
   
-def left(n,l):
-  ind=[-1]
-  for i in range(n+1):
-    if (l[i] not in ind):
-      ind.append(l[i])
-  return (len(ind))
-
 def main1():
-  amount=int(input())
-  nr=0
-  if (amount>0):
-    list=[]
-    for i in range(amount):
-      n=int(input())
-      if(n==-1):
-        nr=i
-      list.append(n)
-    if(right(nr,list,amount)>left(nr,list)):
-      print(right(nr,list,amount))
-    else:
-      print(left(nr,list))
+  amount=input()
+  list=amount.split()
+  if(rechts(list)>links(list)):
+    print(rechts(list))
+  else:
+    print(links(list))
       
 def main2():
   q2=input("file: ")
@@ -64,13 +40,8 @@ def main2():
       print(rechts(step))
     else:
       print(links(step))
-sys.setrecursionlimit(10**7)
-threading.stack_size(2**27)
-
 q1=input()
 if(q1=='I'):
   main1()
-  threading.Thread(target=main1).start()
 elif (q1=='F'):
   main2()
-  threading.Thread(target=main2).start()
