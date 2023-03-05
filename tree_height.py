@@ -28,7 +28,7 @@ def main1():
     print(links(list))
       
 def main2():
-  q2=input("file: ")
+  q2=input()
   if ("a" not in q2):
     with open(q2) as t:
       data=t.readlines()
@@ -36,6 +36,13 @@ def main2():
       if(len(data)==1):
         a=data[0]
         step=a.split(" ")
+      else:
+        print(data)
+        a=" ".join(data)
+        a=a.replace("\n","")
+        print(a)
+        step=a.split(" ")
+        print(step)
     if(rechts(step)>links(step)):
       print(rechts(step))
     else:
