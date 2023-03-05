@@ -1,33 +1,31 @@
 # python3
+def right(n,l):
+  ind=[]
+  for i in range(n):
+    if(i>n):
+      if (l[i] not in ind):
+        ind.append(l[i])
+  return len(ind)
 
-import sys
-import threading
-import numpy
-
-
-def compute_height(n, parents):
-    # Write this function
-    max_height = 0
-    # Your code here
-    return max_height
-
-
+  
+def left(n,l):
+  ind=[]
+  for i in range(n):
+    if (l[i] not in ind):
+      ind.append(l[i])
+  return len(ind)
+  
 def main():
-    # implement input form keyboard and from files
-    
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
-    
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result
-    pass
-
-# In Python, the default limit on recursion depth is rather low,
-# so raise it here for this problem. Note that to take advantage
-# of bigger stack, we have to launch the computation in a new thread.
-sys.setrecursionlimit(10**7)  # max depth of recursion
-threading.stack_size(2**27)   # new thread will get stack of such size
-threading.Thread(target=main).start()
+  amount=int(input())
+  nr=0
+  if (amount>0 and amount<106):
+    for i in range(amount):
+      n=int(input())
+      if(n==-1):
+        nr=i
+      list.append(n)
+    if(right(nr,list)>=left(nr,list)):
+      print(right(nr,list))
+    else:
+      print(left(nr,list))
 main()
-# print(numpy.array([1,2,3]))
