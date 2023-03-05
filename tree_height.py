@@ -5,14 +5,14 @@ def right(n,l,a):
     if(i>n):
       if (l[i] not in ind):
         ind.append(l[i])
-  return (len(ind)-1)
+  return (len(ind))
   
 def left(n,l):
   ind=[-1]
   for i in range(n+1):
     if (l[i] not in ind):
       ind.append(l[i])
-  return (len(ind)-1)
+  return (len(ind))
   
 def main():
   amount=int(input())
