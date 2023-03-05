@@ -50,7 +50,7 @@ def main2():
     else:
       print(links(step))
 q1=input()
-if(q1=='I'):
+if 'I' in q1:
   main1()
-elif (q1=='F'):
+elif 'F' in q1:
   main2()
