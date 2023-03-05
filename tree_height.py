@@ -20,6 +20,7 @@ def rechts(l):
   return(len(ind))
   
 def main1():
+  base=input()
   amount=input()
   list=amount.split()
   if(rechts(list)>links(list)):
