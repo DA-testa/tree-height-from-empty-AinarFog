@@ -29,7 +29,7 @@ def main1():
     print(links(list))
       
 def main2():
-  q2=input()
+  q2="test/"+input()
   if ("a" not in q2):
     with open(q2) as t:
       data=t.readlines()
