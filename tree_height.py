@@ -1,4 +1,6 @@
 # python3
+import sys
+import threading
 def right(n,l,a):
   ind=[-1]
   for i in range(a):
@@ -62,8 +64,13 @@ def main2():
       print(rechts(step))
     else:
       print(links(step))
+sys.setrecursionlimit(10**7)
+threading.stack_size(2**27)
+
 q1=input()
 if(q1=='I'):
   main1()
+  threading.Thread(target=main1).start()
 elif (q1=='F'):
   main2()
+  threading.Thread(target=main2).start()
