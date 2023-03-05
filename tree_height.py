@@ -63,7 +63,6 @@ def main2():
     else:
       print(links(step))
 q1=input()
-q1=input()
 if(q1=='I'):
   main1()
 elif (q1=='F'):
