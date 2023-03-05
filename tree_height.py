@@ -1,33 +1,56 @@
 # python3
+def links(l):
+  ind=[-1]
+  hed=l.index('-1')
+  for i in range(hed):
+    if(i!=hed):
+      if(l[i] not in ind):
+        ind.append(l[i])
+    else:
+      break
+  return(len(ind))
 
-import sys
-import threading
-import numpy
-
-
-def compute_height(n, parents):
-    # Write this function
-    max_height = 0
-    # Your code here
-    return max_height
-
-
-def main():
-    # implement input form keyboard and from files
-    
-    # let user input file name to use, don't allow file names with letter a
-    # account for github input inprecision
-    
-    # input number of elements
-    # input values in one variable, separate with space, split these values in an array
-    # call the function and output it's result
-    pass
-
-# In Python, the default limit on recursion depth is rather low,
-# so raise it here for this problem. Note that to take advantage
-# of bigger stack, we have to launch the computation in a new thread.
-sys.setrecursionlimit(10**7)  # max depth of recursion
-threading.stack_size(2**27)   # new thread will get stack of such size
-threading.Thread(target=main).start()
-main()
-# print(numpy.array([1,2,3]))
+def rechts(l):
+  ind=[-1]
+  hed=l.index('-1')
+  for i in range(len(l)):
+    if(i>hed):
+      if(l[i] not in ind):
+        ind.append(l[i])
+  return(len(ind))
+  
+def main1():
+  base=input()
+  amount=input()
+  list=amount.split()
+  if(rechts(list)>links(list)):
+    print(rechts(list))
+  else:
+    print(links(list))
+      
+def main2():
+  q2=str(input())
+  e="test/"+q2
+  if ("a" not in e):
+    with open(e) as t:
+      data=t.readlines()
+      data.pop(0)
+      if(len(data)==1):
+        a=data[0]
+        step=a.split(" ")
+      else:
+        print(data)
+        a=" ".join(data)
+        a=a.replace("\n","")
+        print(a)
+        step=a.split(" ")
+        print(step)
+    if(rechts(step)>links(step)):
+      print(rechts(step))
+    else:
+      print(links(step))
+q1=input()
+if 'I' in q1:
+  main1()
+elif 'F' in q1:
+  main2()
