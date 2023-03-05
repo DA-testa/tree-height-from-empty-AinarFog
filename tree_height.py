@@ -29,5 +29,5 @@ def main():
     else:
       print(left(nr,list))
 q1=str(input())
-if(q1=="I\r"):
+if(q1=='I\r'):
   main()
